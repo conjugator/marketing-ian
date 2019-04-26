@@ -1,0 +1,43 @@
+h1 {
+    color: #FFC400;
+}
+
+h2 {
+    color: #FFC400;
+}
+
+header {
+    background-color: #C60B1E;
+    text-align: center;
+}
+
+nav {
+    display: none;
+}
+
+.menu-button {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.aboutElem {
+    width: 100%;
+}
+
+.teamMembers {
+    display: inline-block;
+    width: 20%;
+}
+
+.cimg {
+    text-align: center;
+}
+
+.ccpation {
+    text-align: center;
+}
