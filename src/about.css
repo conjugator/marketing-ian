@@ -21,23 +21,14 @@ nav {
     cursor: pointer;
 }
 
+
+/*carousel stuff*/
 .carousel {
-    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden; 
 }
 
-.aboutElem {
-    width: 100%;
-}
-
-.teamMembers {
-    display: inline-block;
-    width: 20%;
-}
-
-.cimg {
-    text-align: center;
-}
-
-.ccpation {
-    text-align: center;
+.celement {
+    width: 600px;
 }
