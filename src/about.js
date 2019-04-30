@@ -3,10 +3,8 @@ let celements = document.querySelectorAll(".celement");
 function centerCarousel() {
     let myCarousel = document.querySelector(".carousel");
     let winWidth = window.innerWidth;
-    let carWidth = 1800 //myCarousel.style.width;
-    console.log(carWidth);
-
-    myCarousel.style.leftPos = (winWidth-carWidth)/2;
+    let carWidth = myCarousel.childElementCount * 600;
+    myCarousel.style.left = "" + ((winWidth-carWidth)/2) + "px";
 }
 
 window.addEventListener("load", centerCarousel);
