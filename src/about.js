@@ -1,4 +1,6 @@
 let celements = document.querySelectorAll(".celement");
+let lcArrow = document.querySelector("#leftArrow");
+let rcArrow = document.querySelector("#rightArrow");
 
 function centerCarousel() {
     //let myCarousel = document.querySelector(".carousel");
@@ -17,4 +19,18 @@ function centerCarousel() {
     })
 }
 
+function positionArrows() {
+    lcArrow.style.left = "20px";
+    lcArrow.style.top = "300px";
+
+    rcArrow.style.left = "" + (window.innerWidth - 70) + "px";
+    rcArrow.style.top = "300px";
+}
+
+function windowResized() {
+    
+}
+
 window.addEventListener("load", centerCarousel);
+window.addEventListener("load", positionArrows);
+window.addEventListener("resize", windowResized);
