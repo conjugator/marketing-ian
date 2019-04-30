@@ -26,8 +26,7 @@ nav {
 .carousel {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: hidden;
-    position: absolute; 
+    position: relative; 
 }
 
 .celement {
