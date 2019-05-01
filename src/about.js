@@ -25,38 +25,16 @@ function windowResized() {
 }
 
 function rotateLeft() {
-    console.log(celements);
-
-    //tempElem = celements[0].children;
-    //console.log(celements[0].textContent);
-    //console.log(tempElem);
     let tempSrc = celements[0].querySelector(".cimg").getAttribute("src");  //.chi .getAttribute("src");
-    console.log(tempSrc);
     let tempText = celements[0].querySelector(".ccaption").textContent;
     for (let n = 0; n < celements.length-1; n++){
-        //celements[n].children = celements[n+1].children;
-        //console.log("" + n + "of" + (celements.length));
         let newSrc = celements[n+1].querySelector(".cimg").getAttribute("src");
         let newText = celements[n+1].querySelector(".ccaption").textContent;
-
-        console.log(newSrc);
-
-        celements[n].querySelector(".cimg").setAttribute("src", "" + newSrc + ""); 
-        console.log(celements[n].querySelector(".cimg").getAttribute("src"));
-        console.log(celements[n].querySelector(".cimg").src);
+        celements[n].querySelector(".cimg").setAttribute("src", newSrc); 
         celements[n].querySelector(".ccaption").textContent = newText;
     }
-
-    console.log(tempSrc);
-    console.log(celements[celements.length-1]);
-    console.log(celements[celements.length-1].querySelector("img"));
-    console.log(celements[celements.length-1].querySelector("img").src);
-    console.log(celements[celements.length-1].querySelector("img").getAttribute("src"));
-    celements[celements.length-1].querySelector("img").src = tempSrc;
-    celements[celements.length-1].textContent = tempText;
-    console.log(celements[celements.length-1]);
-    console.log(celements[celements.length-1].querySelector(".cimg"));
-    console.log(celements);
+    celements[celements.length-1].querySelector(".cimg").setAttribute("src", tempSrc);
+    celements[celements.length-1].querySelector(".ccaption").textContent = tempText;
 }
 
 window.addEventListener("load", centerCarousel);
