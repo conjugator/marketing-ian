@@ -37,6 +37,20 @@ function rotateLeft() {
     celements[celements.length-1].querySelector(".ccaption").textContent = tempText;
 }
 
+function rotateRight() {
+    let finalIndex = celements.length-1;
+    let tempSrc = celements[finalIndex].querySelector(".cimg").getAttribute("src");  //.chi .getAttribute("src");
+    let tempText = celements[finalIndex].querySelector(".ccaption").textContent;
+    for (let n = finalIndex; n > 0; n--){
+        let newSrc = celements[n-1].querySelector(".cimg").getAttribute("src");
+        let newText = celements[n-1].querySelector(".ccaption").textContent;
+        celements[n].querySelector(".cimg").setAttribute("src", newSrc); 
+        celements[n].querySelector(".ccaption").textContent = newText;
+    }
+    celements[0].querySelector(".cimg").setAttribute("src", tempSrc);
+    celements[0].querySelector(".ccaption").textContent = tempText;
+}
+
 window.addEventListener("load", centerCarousel);
 window.addEventListener("load", positionArrows);
 window.addEventListener("resize", windowResized);
