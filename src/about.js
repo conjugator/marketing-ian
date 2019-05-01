@@ -32,19 +32,19 @@ function rotateLeft() {
     //console.log(tempElem);
     let tempSrc = celements[0].querySelector(".cimg").getAttribute("src");  //.chi .getAttribute("src");
     console.log(tempSrc);
-    let tempText = celements[0].textContent;
+    let tempText = celements[0].querySelector(".ccaption").textContent;
     for (let n = 0; n < celements.length-1; n++){
         //celements[n].children = celements[n+1].children;
         //console.log("" + n + "of" + (celements.length));
         let newSrc = celements[n+1].querySelector(".cimg").getAttribute("src");
-        let newText = celements[n+1].textContent;
+        let newText = celements[n+1].querySelector(".ccaption").textContent;
 
         console.log(newSrc);
 
         celements[n].querySelector(".cimg").setAttribute("src", "" + newSrc + ""); 
         console.log(celements[n].querySelector(".cimg").getAttribute("src"));
         console.log(celements[n].querySelector(".cimg").src);
-        celements[n].textContent = newText;
+        celements[n].querySelector(".ccaption").textContent = newText;
     }
 
     console.log(tempSrc);
