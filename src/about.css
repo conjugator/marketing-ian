@@ -48,6 +48,18 @@ nav {
 }
 
 /*phone formatting*/
-@media (max-width: 500px){
+@media (max-width: 600px){
+    /*carousel stuff*/
+    .carousel {
+        display: inline;
+    }
 
+    .celement {
+        display: none;
+    }
+
+    .cimg {
+        max-width: 99%;
+        max-height: 99%;
+    }
 }

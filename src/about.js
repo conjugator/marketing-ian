@@ -1,14 +1,34 @@
+const phoneWidth = 600; //600 px and below for "phone size" screen
+
 let celements = document.querySelectorAll(".celement");
 let lcArrow = document.querySelector("#leftArrow");
 let rcArrow = document.querySelector("#rightArrow");
 
 function centerCarousel() {
     let winWidth = window.innerWidth;
-    let carWidth = celements.length * 600;
-    leftPos = (winWidth-carWidth)/2;
-    celements.forEach(function(element){
-        element.style.left = "" + (leftPos) + "px";
-    })
+
+    if (winWidth <= phoneWidth){
+        //if it's on a phone, only display a single carousel pane
+        celements.forEach(function(element){
+            element.style.display = "none";
+        });
+        let theFocus = document.getElementById("focus")
+        theFocus.style.display = "block";
+        theFocus.style.width = "100%";
+        theFocus.style.left = "0px";
+
+    } else {
+        //if it's on a full-sized screen
+        celements.forEach(function(element){
+            element.style.display = "block";
+        });
+
+        let carWidth = celements.length * 600;
+        leftPos = (winWidth-carWidth)/2;
+        celements.forEach(function(element){
+            element.style.left = "" + (leftPos) + "px";
+        })
+    }
 }
 
 function positionArrows() {
@@ -25,7 +45,7 @@ function windowResized() {
 }
 
 function rotateLeft() {
-    let tempSrc = celements[0].querySelector(".cimg").getAttribute("src");  //.chi .getAttribute("src");
+    let tempSrc = celements[0].querySelector(".cimg").getAttribute("src"); 
     let tempText = celements[0].querySelector(".ccaption").textContent;
     for (let n = 0; n < celements.length-1; n++){
         let newSrc = celements[n+1].querySelector(".cimg").getAttribute("src");
@@ -39,7 +59,7 @@ function rotateLeft() {
 
 function rotateRight() {
     let finalIndex = celements.length-1;
-    let tempSrc = celements[finalIndex].querySelector(".cimg").getAttribute("src");  //.chi .getAttribute("src");
+    let tempSrc = celements[finalIndex].querySelector(".cimg").getAttribute("src"); 
     let tempText = celements[finalIndex].querySelector(".ccaption").textContent;
     for (let n = finalIndex; n > 0; n--){
         let newSrc = celements[n-1].querySelector(".cimg").getAttribute("src");
