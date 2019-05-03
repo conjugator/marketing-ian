@@ -1,6 +1,8 @@
 const phoneWidth = 600; //600 px and below for "phone size" screen
 
 let celements = document.querySelectorAll(".celement");
+let navMenu = document.querySelector("nav");
+let menuButton = document.querySelector(".menu-button");
 let lcArrow = document.querySelector("#leftArrow");
 let rcArrow = document.querySelector("#rightArrow");
 
@@ -44,7 +46,15 @@ function windowResized() {
     positionArrows();
 }
 
-function rotateLeft() {
+function toggleNav() {
+  if (navMenu.style.display == "block"){
+    navMenu.style.display = "none";
+  } else {
+    navMenu.style.display = "block";
+  }
+}
+
+function rotateRight() {
     let tempSrc = celements[0].querySelector(".cimg").getAttribute("src"); 
     let tempText = celements[0].querySelector(".ccaption").textContent;
     for (let n = 0; n < celements.length-1; n++){
@@ -57,7 +67,7 @@ function rotateLeft() {
     celements[celements.length-1].querySelector(".ccaption").textContent = tempText;
 }
 
-function rotateRight() {
+function rotateLeft() {
     let finalIndex = celements.length-1;
     let tempSrc = celements[finalIndex].querySelector(".cimg").getAttribute("src"); 
     let tempText = celements[finalIndex].querySelector(".ccaption").textContent;
@@ -74,5 +84,6 @@ function rotateRight() {
 window.addEventListener("load", centerCarousel);
 window.addEventListener("load", positionArrows);
 window.addEventListener("resize", windowResized);
+menuButton.addEventListener("click", toggleNav);
 lcArrow.addEventListener("click", rotateLeft);
 rcArrow.addEventListener("click", rotateRight);
